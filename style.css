@@ -41,23 +41,25 @@ img {
 #cover {
     border-radius: 20px;
     width: 90%;
-    
+    object-fit: cover;
+    height: 125px;
 }
 
 .bottom {
     display: grid;
     align-items: center;
     width: 90%;
+    justify-content: center;
     height: auto;
     margin-top: 25px;
-    grid-template-areas: "image judul" "image desc";
-    grid-template-columns: 160px 1fr;
+    grid-template-areas: "image judul" "desc desc";
+    grid-template-columns: 110px 1fr;
 }
 
 #profile {
     border-radius: 50%;
-    width: 160px;
-    height: 160px;
+    width: 110px;
+    height: 110px;
     grid-area: image;
 }
 
@@ -69,13 +71,24 @@ img {
     color: rgb(172, 172, 172);
 }
 
+.prof {
+    display: flex;
+    width: auto;
+    height: 100%;
+    align-items: center;
+}
+
+#name {
+    line-height: 1em;
+}
+
 .text {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-left: 30px;
+    gap: 5px;
+    margin-left: 20px;
     justify-content: center;
-    height: 100%;
+    height: auto;
     grid-area: judul;
 }
 
@@ -83,17 +96,18 @@ img {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-left: 30px;
+    margin-top: 20px;
     justify-content: center;
     height: 100%;
     grid-area: desc;
 }
 
 .btn {
-    width: 100px;
+    width: 130px;
     height: auto;
     border-radius: 20px;
-    padding: 10px 0;
+    padding: 10px ;
+    transition: transform 0.2s ease;
     border: none;
     font-weight: 700;
 }
@@ -101,6 +115,7 @@ img {
 .btn:hover {
     opacity: 0.7;
     cursor: pointer;
+    transform: scale(1.05);
 }
 
 .text-white {
@@ -115,9 +130,10 @@ a {
 
 .subscribe {
     display: flex;
-    gap: 15px;
+    justify-content: space-between;
     width: auto;
     height: auto;
+    margin-top: 10px;
 }
 
 .btn-gabung {
@@ -141,17 +157,19 @@ a {
 
 .navbar ul {
     display: flex;
+    overflow-x: scroll;
     width: auto;
     height: auto;
     gap: 25px;
     list-style: none;
 }
 
-.navbar ul li {
-    line-height: 2rem;
+.navbar ul li a {
+    line-height: 2em;
 }
 
-.navbar ul li:hover {
+.navbar ul li:hover a,
+.navbar ul li a.active {
     border-bottom: solid 2px rgba(255, 255, 255, 0.623);
 }
 
@@ -179,6 +197,7 @@ hr {
 
 .content {
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: auto;
     position: relative;
@@ -186,7 +205,7 @@ hr {
 
 .video {
     display: flex;
-    width: 570px;
+    width: 100%;
     height: auto;
 }
 
@@ -197,7 +216,7 @@ video {
 }
 
 .judul {
-    display: flex;
+    display: none;
     width: 410px;
     position: absolute;
     top: 5px;
@@ -206,7 +225,7 @@ video {
 }
 
 .title {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
 }
 
@@ -248,20 +267,20 @@ video {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 1000px;
+    width: 100%;
+    gap: 10px;
     height: 100%;
-    margin-left: 20px;
 }
 
 .title-lagi {
-    font-size: 22px;
+    font-size: 20px;
     opacity: 0.8;
 }
 
 .tanggal {
     opacity: 0.5;
     font-size: 13px;
-    line-height: 3rem;
+    line-height: 1em;
 }
 
 .desc-video {
@@ -273,57 +292,26 @@ video {
     margin-top: 10px;
 }
 
-@media screen and (max-width: 756px) {
-    .cover {
-        height: 170px;
-        width: 100%;
-    }
+.content-video {
+    flex-direction: row;
+}
 
-    #cover {
-        object-fit: cover;
-    }
+.title-cihuy {
+    font-size: 13px;
+}
 
-    #profile {
-        width: 130px;
-        height: 130px;
-    }
+.tanggal-video {
+    font-size: 11px;
+}
 
-    .bottom {
-        grid-template-areas: "image judul" "desc desc";
-        grid-template-columns: 130px 1fr;
-    }
+.main-shorts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
 
-    .text-bawah {
-        width: 90%;
-        margin-left: 0;
-        margin-top: 20px;
-    }
-
-    .subscribe {
-        margin-top: 10px;
-    }
-
-    .navbar ul {
-        gap: 17px;
-    }
-
-    .main {
-        gap: 70px;
-    }
-
-    .content {
-        flex-direction: column;
-    }
-
-    .video {
-        width: 100%;
-    }
-
-    .desc-text {
-        width: 100%;
-    }
-
-    .desc-video {
-        width: 100%;
-    }
+.content-shorts .video video {
+    width: 100%;
+    height: 230px;
+    border: solid 1px rgba(255, 255, 255, 0.377);
 }
