@@ -1,6 +1,6 @@
 Script tampilan Youtube sederhana yang dibuat menggunakan html dan css. Ini belum responsive jadi kalau dibuka di laptop / pc akan berantakan. Jika ingin membuatnya jadi responsive, silahkan tambahkan kode css ini:
 
-```
+``` Css
 /* Untuk desktop */
 @media screen and (min-width: 1024px) {
   // Kode css
